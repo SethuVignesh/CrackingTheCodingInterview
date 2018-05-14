@@ -3,7 +3,6 @@ package others;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 class CreateBTFromInPrePostOrders {
 
@@ -32,21 +31,6 @@ class CreateBTFromInPrePostOrders {
             this.data=i;
         }
     }
-    private static void buildBinary(int[] postOrder, int[] inOrder) {
-
-        Node rootNode= getRoot(postOrder,0,postOrder[postOrder.length-1]);
-
-
-
-
-
-    }
-
-    public static  Node getRoot(int[] postOrder, int startIndex, int endIndex){
-        return new Node(postOrder[endIndex]);
-    }
-
-
 
     @Nullable
     public static Node buildTree(int[] inOrder, int[] postOrder, int startIndex, int endIndex){
@@ -65,11 +49,8 @@ class CreateBTFromInPrePostOrders {
                 break;
             }
         }
-
         //left subtree
         Node leftNode=buildTree(inOrder,postOrder,startIndex,rootIndexFromInorder-1);
-
-
         //right subtree
         Node rightNode= buildTree(inOrder,postOrder,rootIndexFromInorder+1,endIndex);
 
